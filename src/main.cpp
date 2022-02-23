@@ -122,7 +122,7 @@ bool writeOutputFile(string testName) {
         return false;
     }
     currentTest.currentScore = score;
-    cerr << "scored " << score;
+    cerr << "test " << currentTest.name << " scored " << score;
     if (score > currentTest.bestScore) {
         cerr << ", improved by " << score - currentTest.bestScore << endl;
         string path = testName + '_';
@@ -130,7 +130,6 @@ bool writeOutputFile(string testName) {
         path += ".out";
         ofstream out(path);
         writeOutput(out);
-        cerr << "wrote " << path << " with score " << score;
     } else {
         cerr << endl;
     }

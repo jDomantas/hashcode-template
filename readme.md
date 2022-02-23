@@ -12,13 +12,14 @@ want to test multiple solutions in parallel.
 
 # Getting started
 
-1. Add inputs to `input/` folder.
-2. Define model for input data and current solution in `MODEL` section in
+1. Adjust test lists if current problem does not have exactly 6 tests.
+2. Add inputs to `input/` folder. File names should be `a.txt`, `b.txt`, ...
+3. Define model for input data and current solution in `MODEL` section in
 `src/main.cpp`.
-3. Define evaluator for current solution in `SCORING` section.
-4. Implement input reader and solution writer in `INPUT / OUTPUT` section.
-5. `python run.py` to run the current solution.
-6. Submit outputs and source from `latest/`.
+4. Define evaluator for current solution in `SCORING` section.
+5. Implement input reader and solution writer in `INPUT / OUTPUT` section.
+6. `python run.py` to run the current solution.
+7. Submit outputs and source from `latest/`.
 
 
 # File organization
