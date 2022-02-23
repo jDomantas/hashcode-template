@@ -114,12 +114,53 @@ int scoreResult() {
 
 template<typename Input>
 void readInput(Input &input) {
-    // todo: parse model from input
+    fori(100000) {
+        like[i].clear();
+        dislike[i].clear();
+    }
+    names.clear();
+    pizza.clear();
+
+    map<string, int> indices;
+    input >> clients;
+    fori(clients) {
+        int p;
+        input >> p;
+        forj(p) {
+            string t;
+            input >> t;
+            if (indices.find(t) == indices.end()) {
+                int idx = indices.size();
+                indices[t] = idx;
+                like[i].push_back(idx);
+                names.push_back(t);
+            } else {
+                like[i].push_back(indices[t]);
+            }
+        }
+        input >> p;
+        forj(p) {
+            string t;
+            input >> t;
+            if (indices.find(t) == indices.end()) {
+                int idx = indices.size();
+                indices[t] = idx;
+                dislike[i].push_back(idx);
+                names.push_back(t);
+            } else {
+                dislike[i].push_back(indices[t]);
+            }
+        }
+    }
 }
 
 template<typename Output>
 void writeOutput(Output &output) {
-    // todo: write current solution to output
+    output << pizza.size();
+    for (auto x : pizza) {
+        output << " " << names[x];
+    }
+    output << endl;
 }
 
 // =======================================
