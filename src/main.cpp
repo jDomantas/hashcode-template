@@ -197,17 +197,6 @@ namespace testE {
 #endif
 }
 
-namespace testF {
-#include "test_f.cpp"
-#ifdef USE_EVERYWHERE
-#ifdef SOLVER
-#error "multiple solvers have USE_EVERYWHERE"
-#endif
-#define SOLVER(a) testF::solveTest
-#undef USE_EVERYWHERE
-#endif
-}
-
 #ifndef SOLVER
 #define SOLVER(a) (a)
 #endif
@@ -220,7 +209,6 @@ extern const Test TEST_B;
 extern const Test TEST_C;
 extern const Test TEST_D;
 extern const Test TEST_E;
-extern const Test TEST_F;
 #include "tests.cpp"
 
 const Test TEST_A = {
@@ -255,13 +243,6 @@ const Test TEST_E = {
     "e",
     bestScoreE,
     SOLVER(testE::solveTest),
-    -1
-};
-
-const Test TEST_F = {
-    "f",
-    bestScoreF,
-    SOLVER(testF::solveTest),
     -1
 };
 
