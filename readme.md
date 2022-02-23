@@ -52,13 +52,15 @@ If you want to skip some tests then comment out corresponding
 `runTest(TEST_?);` lines in `src/tests.cpp`.
 
 If you want to dump solutions in the middle of test run then add
-`writeCurrentSolution()`. It will evaluate current solution and write it out if
-has better score than best solution of current run. It will return `false` if
-solution was not an improvement.
+`writeCurrentSolution()`. It will return `true` if current solution is an
+improvement in this run (so that a pattern like
+`doRandomChange(); if (!writeCurrentSolution()) { revertChange(); }` would
+work). However, solution files will only be written if they improve over the 
+best known score to avoid creating unnecessary files.
 
 `currentTest.currentScore` will contain the best score found during this run.
 `currentTest.bestScore` will contain the best score overall (which is hardcoded
-in `main.cpp`).
+in `tests.cpp`).
 
 If you need to evaluate current solution use `scoreResult()`.
 

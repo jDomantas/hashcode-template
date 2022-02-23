@@ -122,16 +122,18 @@ bool writeOutputFile(string testName) {
         return false;
     }
     currentTest.currentScore = score;
-    string path = testName + '_';
-    padAppend(path, score, 9);
-    path += ".out";
-    ofstream out(path);
-    writeOutput(out);
-    cerr << "wrote " << path << " with score " << score;
+    cerr << "scored " << score;
     if (score > currentTest.bestScore) {
-        cerr << ", improved by " << score - currentTest.bestScore;
+        cerr << ", improved by " << score - currentTest.bestScore << endl;
+        string path = testName + '_';
+        padAppend(path, score, 9);
+        path += ".out";
+        ofstream out(path);
+        writeOutput(out);
+        cerr << "wrote " << path << " with score " << score;
+    } else {
+        cerr << endl;
     }
-    cerr << endl;
     return true;
 }
 
