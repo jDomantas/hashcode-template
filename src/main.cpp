@@ -81,8 +81,33 @@ set<int> pizza;
 // =============== SCORING ===============
 
 int scoreResult() {
-    // todo: calculate score from current model
-    return 0;
+    for (auto t : pizza) {
+        if (t >= names.size()) {
+            cerr << "invalid topping index" << endl;
+            exit(1);
+        }
+    }
+
+    int res = 0;
+    fori(clients) {
+        bool good = true;
+        for (auto x : like[i]) {
+            if (pizza.find(x) == pizza.end()) {
+                good = false;
+                break;
+            }
+        }
+        for (auto x : dislike[i]) {
+            if (pizza.find(x) != pizza.end()) {
+                good = false;
+                break;
+            }
+        }
+        if (good) {
+            res++;
+        }
+    }
+    return res;
 }
 
 // =========== INPUT / OUTPUT ============
