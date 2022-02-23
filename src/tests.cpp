@@ -1,8 +1,8 @@
-const int bestScoreA = 0;
-const int bestScoreB = 0;
-const int bestScoreC = 0;
-const int bestScoreD = 0;
-const int bestScoreE = 0;
+const int bestScoreA = 2;
+const int bestScoreB = 5;
+const int bestScoreC = 4;
+const int bestScoreD = 1614;
+const int bestScoreE = 1682;
 
 void runTests() {
     runTest(TEST_A);

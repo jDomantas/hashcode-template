@@ -1,9 +1,19 @@
 // #define USE_EVERYWHERE
 
 void solveTest() {
-    if (clients >= 1) {
-        for (auto x : like[0]) {
-            pizza.insert(x);
+    bool improved;
+    do {
+        improved = false;
+        fori(clients) {
+            set<int> current = pizza;
+            for (auto x : like[i]) {
+                pizza.insert(x);
+            }
+            if (writeCurrentSolution()) {
+                improved = true;
+            } else {
+                pizza = current;
+            }
         }
-    }
+    } while (improved);
 }
