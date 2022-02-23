@@ -72,9 +72,12 @@ Test currentTest;
 
 // ================ MODEL ================
 
+// todo: define model
+
 // =============== SCORING ===============
 
 int scoreResult() {
+    // todo: calculate score from current model
     return 0;
 }
 
@@ -82,10 +85,12 @@ int scoreResult() {
 
 template<typename Input>
 void readInput(Input &input) {
+    // todo: parse model from input
 }
 
 template<typename Output>
 void writeOutput(Output &output) {
+    // todo: write current solution to output
 }
 
 // =======================================
@@ -208,6 +213,13 @@ namespace testF {
 
 // ============== TEST INFO ==============
 
+void runTest(const Test &test);
+extern const Test TEST_A;
+extern const Test TEST_B;
+extern const Test TEST_C;
+extern const Test TEST_D;
+extern const Test TEST_E;
+extern const Test TEST_F;
 #include "tests.cpp"
 
 const Test TEST_A = {
@@ -283,12 +295,7 @@ int main(int argc, const char *argv[]) {
     }
     cerr << "reading inputs from " << inputFolder << endl;
 
-    runTest(TEST_A);
-    runTest(TEST_B);
-    runTest(TEST_C);
-    runTest(TEST_D);
-    runTest(TEST_E);
-    runTest(TEST_F);
+    runTests();
 
     return 0;
 }
