@@ -72,7 +72,11 @@ Test currentTest;
 
 // ================ MODEL ================
 
-// todo: define model
+int clients;
+vector<int> like[100000];
+vector<int> dislike[100000];
+vector<string> names;
+set<int> pizza;
 
 // =============== SCORING ===============
 
